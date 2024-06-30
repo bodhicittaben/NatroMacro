@@ -1,4 +1,4 @@
-/*
+﻿/*
 Natro Macro (https://github.com/NatroTeam/NatroMacro)
 Copyright © Natro Team (https://github.com/NatroTeam)
 
@@ -247,12 +247,12 @@ nm_importPaths()
 		"gtc", ["clock", "antpass", "robopass", "honeydis", "treatdis", "blueberrydis", "strawberrydis", "coconutdis", "gluedis", "royaljellydis", "blender", "windshrine", ; go to collect (machine)
 				"stockings", "wreath", "feast", "gingerbread", "snowmachine", "candles", "samovar", "lidart", "gummybeacon", "rbpdelevel", ; beesmas
 				"honeylb", "honeystorm", "stickerstack", "stickerprinter", "normalmm", "megamm", "nightmm", "extrememm", "wintermm"], ; other
-		"gtf", ["bamboo", "blueflower", "cactus", "clover", "coconut", "dandelion", "mountaintop", "mushroom", "pepper", "pinetree", "pineapple", "pumpkin",
+		"gtf", ["bamboo", "blueflower", "cactus", "clover", "coconut", "dandelion", "hub", "mountaintop", "mushroom", "pepper", "pinetree", "pineapple", "pumpkin",
 				"rose", "spider", "strawberry", "stump", "sunflower"], ; go to field
 		"gtp", ["bamboo", "blueflower", "cactus", "clover", "coconut", "dandelion", "mountaintop", "mushroom", "pepper", "pinetree", "pineapple", "pumpkin",
 				"rose", "spider", "strawberry", "stump", "sunflower"], ; go to planter
 		"gtq", ["black", "brown", "bucko", "honey", "polar", "riley"], ; go to questgiver
-		"wf",  ["bamboo", "blueflower", "cactus", "clover", "coconut", "dandelion", "mountaintop", "mushroom", "pepper", "pinetree", "pineapple", "pumpkin",
+		"wf",  ["bamboo", "blueflower", "cactus", "clover", "coconut", "dandelion", "hub", "mountaintop", "mushroom", "pepper", "pinetree", "pineapple", "pumpkin",
 				"rose", "spider", "strawberry", "stump", "sunflower"]  ; walk from (field to hive)
 	)
 
@@ -1724,6 +1724,21 @@ nm_importFieldDefaults()
 		, "invertFB", 0
 		, "invertLR", 0)
 
+	FieldDefault["Hub"] := Map("pattern", "Snake"
+		, "size", "M"
+		, "width", 5
+		, "camera", "None"
+		, "turns", 1
+		, "sprinkler", "Center"
+		, "distance", 1
+		, "percent", 95
+		, "gathertime", 10
+		, "convert", "Walk"
+		, "drift", 0
+		, "shiftlock", 0
+		, "invertFB", 0
+		, "invertLR", 0)
+
 	global StandardFieldDefault := ObjFullyClone(FieldDefault)
 
 	inipath := A_WorkingDir "\settings\field_config.ini"
@@ -1969,7 +1984,7 @@ HasPopStar:=0
 PopStarActive:=0
 PreviousAction:="None"
 CurrentAction:="Startup"
-fieldnamelist := ["Bamboo","Blue Flower","Cactus","Clover","Coconut","Dandelion","Mountain Top","Mushroom","Pepper","Pine Tree","Pineapple","Pumpkin","Rose","Spider","Strawberry","Stump","Sunflower"]
+fieldnamelist := ["Bamboo","Blue Flower","Cactus","Clover","Coconut","Dandelion","Hub","Mountain Top","Mushroom","Pepper","Pine Tree","Pineapple","Pumpkin","Rose","Spider","Strawberry","Stump","Sunflower"]
 hotbarwhilelist := ["Never","Always","At Hive","Gathering","Attacking","Microconverter","Whirligig","Enzymes","GatherStart","Snowflake"]
 sprinklerImages := ["saturator"]
 ReconnectDelay:=0
