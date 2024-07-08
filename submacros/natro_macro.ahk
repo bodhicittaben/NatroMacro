@@ -1729,7 +1729,7 @@ nm_importFieldDefaults()
 		, "width", 5
 		, "camera", "None"
 		, "turns", 1
-		, "sprinkler", "Center"
+		, "sprinkler", "None"
 		, "distance", 1
 		, "percent", 95
 		, "gathertime", 10
@@ -18774,6 +18774,10 @@ nm_walkFrom(field){
 	nm_setStatus("Traveling", "Hive")
 	KeyWait "F14", "T120 L"
 	nm_endWalk()
+
+	if (field = "hub") {
+		nm_claimHiveSlot()
+	}
 }
 nm_gotoPlanter(location, waitEnd := 1){
 	global HiveConfirmed:=0
